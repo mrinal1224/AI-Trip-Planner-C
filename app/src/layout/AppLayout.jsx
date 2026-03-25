@@ -21,7 +21,7 @@ export default function AppLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="min-h-dvh bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50">
+    <div className="min-h-dvh bg-gradient-to-b from-sky-50 via-blue-50/60 to-white text-slate-900">
       <Navbar onMenuClick={() => setSidebarOpen(true)} hideMenu={authRoute} />
 
       <div className="flex">

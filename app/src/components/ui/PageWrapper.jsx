@@ -4,12 +4,12 @@ export default function PageWrapper({ title, description, children }) {
       {(title || description) && (
         <div className="mb-5">
           {title && (
-            <h1 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+            <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
               {title}
             </h1>
           )}
           {description && (
-            <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
+            <p className="mt-1 text-sm text-slate-600">
               {description}
             </p>
           )}

@@ -6,7 +6,7 @@ export default function Sidebar({ items, variant, isOpen, onClose }) {
   const sidebarContent = (
     <div className="flex h-full flex-col">
       <div className="px-4 py-4">
-        <div className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
+        <div className="text-xs font-semibold uppercase tracking-wide text-sky-700">
           Navigation
         </div>
       </div>
@@ -20,7 +20,7 @@ export default function Sidebar({ items, variant, isOpen, onClose }) {
               className={({ isActive }) =>
                 isActive
                   ? 'block rounded-lg bg-brand-600 px-3 py-2 text-sm font-medium text-white'
-                  : 'block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900'
+                  : 'block rounded-lg px-3 py-2 text-sm font-medium text-sky-900/80 hover:bg-sky-50'
               }
             >
               {item.label}
@@ -33,7 +33,7 @@ export default function Sidebar({ items, variant, isOpen, onClose }) {
 
   if (!isMobile) {
     return (
-      <div className="h-dvh w-64 border-r border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+      <div className="h-dvh w-64 border-r border-sky-200 bg-white">
         {sidebarContent}
       </div>
     )
@@ -50,7 +50,7 @@ export default function Sidebar({ items, variant, isOpen, onClose }) {
       />
 
       <div
-        className={`fixed left-0 top-0 z-50 h-dvh w-72 transform border-r border-slate-200 bg-white shadow-xl transition-transform duration-200 dark:border-slate-800 dark:bg-slate-950 ${
+        className={`fixed left-0 top-0 z-50 h-dvh w-72 transform border-r border-sky-200 bg-white shadow-xl transition-transform duration-200 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >

@@ -9,7 +9,7 @@ export default function TripDetails() {
       title={`Trip Details`}
       description={tripId ? `Trip ID: ${tripId}` : 'Trip details will appear here.'}
     >
-      <div className="rounded-xl border border-slate-200 bg-white p-6 text-slate-600 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
+      <div className="rounded-xl border border-sky-200 bg-white p-6 text-slate-700">
         Placeholder trip details page. AI itinerary + editing come later.
       </div>
     </PageWrapper>
