@@ -8,6 +8,8 @@ export default function AuthTextField({
   placeholder,
   error,
   required,
+  readOnly,
+  disabled,
 }) {
   return (
     <div>
@@ -29,10 +31,13 @@ export default function AuthTextField({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        readOnly={readOnly}
+        disabled={disabled}
         className={[
           'w-full rounded-lg border px-3 py-2 text-sm outline-none',
           'bg-white text-slate-900',
           'border-slate-200 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/20',
+          readOnly || disabled ? 'bg-slate-50 text-slate-500' : '',
           error ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : '',
         ].join(' ')}
         aria-invalid={Boolean(error)}

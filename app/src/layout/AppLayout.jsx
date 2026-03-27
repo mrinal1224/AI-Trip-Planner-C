@@ -35,12 +35,14 @@ export default function AppLayout() {
       </div>
 
       {!authRoute && (
-        <Sidebar
-          items={NAV_ITEMS}
-          variant="mobile"
-          isOpen={sidebarOpen}
-          onClose={() => setSidebarOpen(false)}
-        />
+        <div className="lg:hidden">
+          <Sidebar
+            items={NAV_ITEMS}
+            variant="mobile"
+            isOpen={sidebarOpen}
+            onClose={() => setSidebarOpen(false)}
+          />
+        </div>
       )}
     </div>
   )

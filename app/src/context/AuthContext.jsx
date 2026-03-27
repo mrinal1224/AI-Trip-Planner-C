@@ -8,6 +8,7 @@ import {
   signOutUser,
   signUpWithEmailAndPassword,
 } from '../services/firebase/authService'
+import { ensureUserProfileDocument } from '../services/firestore'
 
 const AuthContext = createContext(null)
 
@@ -17,9 +18,18 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     // Persisted sessions are handled by Firebase; we just reflect the state in React.
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       setUser(firebaseUser)
-      setLoading(false)
+
+      try {
+        if (firebaseUser?.uid) {
+          await ensureUserProfileDocument(firebaseUser)
+        }
+      } catch (error) {
+        console.error('Failed to initialize user profile document:', error)
+      } finally {
+        setLoading(false)
+      }
     })
 
     return unsubscribe

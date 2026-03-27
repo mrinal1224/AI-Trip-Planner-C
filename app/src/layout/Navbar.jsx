@@ -31,7 +31,7 @@ export default function Navbar({ onMenuClick, hideMenu }) {
             <button
               type="button"
               aria-label="Open sidebar"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-sky-200 bg-white text-slate-900 hover:bg-sky-50"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-sky-200 bg-white text-slate-900 hover:bg-sky-50 lg:hidden"
               onClick={onMenuClick}
             >
               <span className="block h-0 w-0 overflow-hidden">Menu</span>
